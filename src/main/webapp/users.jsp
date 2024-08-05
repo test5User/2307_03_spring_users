@@ -10,12 +10,16 @@
             <th>Id</th>
             <th>Nane</th>
             <th>Age</th>
+            <th>Actions</th>
         </tr>
         <c:forEach var="user" items="${userList}">
             <tr>
                 <td>${user.id}</td>
                 <td>${user.name}</td>
                 <td>${user.age}</td>
+                <td>
+                    <a href="/delete?id=${user.id}">delete</a>
+                </td>
             </tr>
         </c:forEach>
     </table>

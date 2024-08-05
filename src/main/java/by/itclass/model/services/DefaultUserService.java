@@ -20,4 +20,9 @@ public class DefaultUserService implements UserService{
     public List<User> getAllUser() {
         return dao.selectAllUser();
     }
+
+    @Override
+    public void deleteById(int id) {
+        dao.removeById(id);
+    }
 }

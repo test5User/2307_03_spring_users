@@ -23,4 +23,14 @@ public class DefaultUserDao implements UserDao{
             return session.createQuery("from User", User.class).list();
         }
     }
+
+    @Override
+    public void removeById(int id) {
+        try (var session = factory.openSession()){
+            var transaction = session.beginTransaction();
+            var user = session.get(User.class, id);
+            session.remove(user);
+            transaction.commit();
+        }
+    }
 }
