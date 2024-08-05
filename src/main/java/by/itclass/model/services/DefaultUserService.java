@@ -25,4 +25,9 @@ public class DefaultUserService implements UserService{
     public void deleteById(int id) {
         dao.removeById(id);
     }
+
+    @Override
+    public void add(User user) {
+        dao.insert(user);
+    }
 }

@@ -33,4 +33,13 @@ public class DefaultUserDao implements UserDao{
             transaction.commit();
         }
     }
+
+    @Override
+    public void insert(User user) {
+        try (var session = factory.openSession()){
+            var transaction = session.beginTransaction();
+            session.persist(user);
+            transaction.commit();
+        }
+    }
 }
