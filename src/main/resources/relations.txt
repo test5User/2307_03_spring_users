@@ -1,0 +1,54 @@
+1. Many-to-one
+    @Entity
+    @Table(name="orderItem")
+    class OrderItem{
+        -//-
+        @ManyToOne
+        @JoinColumn(name="orderId")
+        private Order order;
+    }
+
+2. One-to-many
+    @Entity
+    @Table(name="orders")
+    class Order {
+        -//-
+        @OneToMany
+        @JoinColumn(name="orderId)
+        private List<OrderItem> orderItems;
+    }
+
+3. Many-to-many
+
+    @Entity
+    class User {
+        private int id
+        @ManyToMany
+        @JoinTable(name="user_task",
+            joinColumns=@JoinColumn(name="user_id, referencedColumnName="id"),
+            inverseJoinColumn=@JoinColumn(name="task_id", referencedColumnName="id"))
+        private Set<Task> tasks;
+    }
+
+    @Entity
+    class Task {
+        private int id
+        @ManyToMany
+        @JoinTable(name="user_task",
+            joinColumns=@JoinColumn(name="task_id, referencedColumnName="id"),
+            inverseJoinColumn=@JoinColumn(name="user_id", referencedColumnName="id"))
+        private Set<User> users;
+    }
+
+    table user_task
+
+    user_id     task_id
+    1           1
+    1           2
+    2           1
+    3           3
+    4           4
+    5           5
+    3           5
+
+4. One-to-one

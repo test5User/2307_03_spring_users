@@ -18,4 +18,6 @@ public class Passport {
     private int id;
     private String number;
     private String expired;
+    @OneToOne(mappedBy = "passport")
+    private User user;
 }

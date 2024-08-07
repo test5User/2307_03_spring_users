@@ -10,6 +10,8 @@
             <th>Id</th>
             <th>Nane</th>
             <th>Age</th>
+            <th>Passport Number</th>
+            <th>Passport Expired Data</th>
             <th>Actions</th>
         </tr>
         <c:forEach var="user" items="${userList}">
@@ -17,6 +19,8 @@
                 <td>${user.id}</td>
                 <td>${user.name}</td>
                 <td>${user.age}</td>
+                <td>${user.passport.number}</td>
+                <td>${user.passport.expired}</td>
                 <td>
                     <a href="/delete?id=${user.id}">delete</a>
                     <a href="/upd?id=${user.id}&name=${user.name}&age=${user.age}">update</a>

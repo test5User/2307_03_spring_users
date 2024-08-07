@@ -1,5 +1,6 @@
 package by.itclass.configs;
 
+import by.itclass.model.entities.Passport;
 import by.itclass.model.entities.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,6 +11,7 @@ public class HibernateConfig {
     public Configuration configuration() {
         var config = new Configuration();
         config.addAnnotatedClass(User.class);
+        config.addAnnotatedClass(Passport.class);
         return config;
     }
 
