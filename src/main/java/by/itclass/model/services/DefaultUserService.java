@@ -30,4 +30,9 @@ public class DefaultUserService implements UserService{
     public void add(User user) {
         dao.insert(user);
     }
+
+    @Override
+    public void upd(User user) {
+        dao.update(user);
+    }
 }

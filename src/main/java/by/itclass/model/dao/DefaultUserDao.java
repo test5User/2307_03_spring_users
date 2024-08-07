@@ -42,4 +42,13 @@ public class DefaultUserDao implements UserDao{
             transaction.commit();
         }
     }
+
+    @Override
+    public void update(User user) {
+        try (var session = factory.openSession()){
+            var tr = session.beginTransaction();
+            session.update(user);
+            tr.commit();
+        }
+    }
 }

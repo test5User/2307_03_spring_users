@@ -7,6 +7,7 @@ public class AppConst {
     public static final String SAVE_USER_URL = "/save";
     public static final String ADD_USER_SECOND_URL = "/addSecond";
     public static final String UPD_USER_URL = "/upd";
+    public static final String SAVE_UPD_USER_URL = "/saveUpd";
 
     public static final String USER_LIST_ATTR = "userList";
     public static final String USER_ATTR = "user";
