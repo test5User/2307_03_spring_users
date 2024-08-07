@@ -12,5 +12,9 @@
     <p>
         <a href="/add">Add user</a>
     </p>
+
+    <p>
+        <a href="/add-second.jsp">Add user Second</a>
+    </p>
 </body>
 </html>

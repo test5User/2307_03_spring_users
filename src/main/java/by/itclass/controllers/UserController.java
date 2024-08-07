@@ -51,4 +51,12 @@ public class UserController {
         service.add(user);
         return "redirect:" + ALL_USERS_URL;
     }
+
+    @PostMapping(ADD_USER_SECOND_URL)
+    public String addSecond(
+            @RequestParam(name = NAME_PARAM) String name,
+            @RequestParam(name = AGE_PARAM) int age) {
+        service.add(new User(name, age));
+        return "redirect:" + ALL_USERS_URL;
+    }
 }

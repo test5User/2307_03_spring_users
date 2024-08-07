@@ -19,6 +19,7 @@
                 <td>${user.age}</td>
                 <td>
                     <a href="/delete?id=${user.id}">delete</a>
+                    <a href="/upd?id=${user.id}&name=${user.name}&age=${user.age}">update</a>
                 </td>
             </tr>
         </c:forEach>
